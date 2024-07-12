@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> <!--للترميز تدعم اللغه العربيه والانجليزيه -->
+<meta name="view" content="techcode"> <!--الوصف السفلي الخاص بالموقع -->
+<title>Form</title>
+<style>
+body {
+  background-image: url('shutterstock_1497472160.0.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 350px;
+  margin: 100px auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.container img {
+  width: 100%;
+  max-width: 250px;
+ 
+}
+
+h1 {
+  color: #cd9d00;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+p {
+  color: #ffffff;
+  font-size: 20px;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(10, 71, 109, 0.8);
+  max-width: 90%;
+  border-radius: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: right;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #cd9d00;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+input[type="submit"]:hover {
+  background-color: #b88a00;
+
+}
+
+
+</style>
+</head>
+<body>
+<p><b>اهلا وسهلا بكم في مطعمنا</b></p>
+<div class="container">
+  <div>
+    <img src="Screenshot_2024-05-19_233126-removebg-preview.png" alt="Logo">
+    <h1>قعدتنا</h1>
+    <form autocomplete="on" action="home.html" method="post">
+      <input type="email" name="email" placeholder="بريدك الالكتروني" required autofocus>
+      <input type="password" name="password" placeholder="كلمه السر الخاصه بك" required>
+      <input type="submit" value="اهلا وسهلا">
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمه الطعام</title>
+    <style>
+        li {
+            float: right;
+            display: block;     
+            color: #ffffff;
+            font-size: 20px;
+            text-align: right;
+            padding: 20px;
+            margin: 5px;
+            margin-left: 0px;
+           
+        }
+        li:hover {
+            color: #ffffff;
+          
+        }
+        img{
+      padding-top: 10px;
+        float: right;
+   }
+        a {
+            text-decoration: none;
+            color: #47240a;
+        }
+        a:hover {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        div {
+            margin: 30px;
+            margin-top: 0px;
+        }
+        .container {
+            background-color: #34bd66;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 60px;
+        }
+        .food {
+            display: flex;
+            margin-top: 50px;
+            float:right;
+        }
+        .food-item {
+            display: block;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+           
+            
+        }
+        .food-item p{
+          float: right;
+        }
+        .food img {
+            width: 400px;
+            margin-bottom: 10px;
+        }
+        .food p {
+            font-size: 20px;
+            margin: 10px;
+        }
+        .food .price {
+            font-size: 18px;
+            color: #c01e09;
+            margin-bottom: 10px;
+        }
+        .food button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #34bd66;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            
+        }
+        .food button:hover {
+            background-color: #2a9a51;
+        }
+        .invoice {
+            margin-top: 30px;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <img src="aa23.png" alt="resturant" width="180px">
+    <li><a href="home.html">الصفحه الرئيسيه</a></li>
+    <li><a href="about.html">معلومات شخصيه</a></li>
+    <li><a href="minuo.html" target="_blank">قائمه الطعام</a></li>
+    <li><a href="answeer.html">تواصل معنا</a></li>
+    <li><a href="form.html">خروج</a></li>
+  </div>
+  <div class="food">
+    <div class="food-item">
+      <img src="Burger.jpg" alt="burger">
+      <p>برغر</p>
+      <p class="price">7$</p>
+      <button onclick="addToInvoice('برغر', 7)">شراء</button>
+    </div>
+    <div class="food-item">
+      <img src="pizza.jpg" alt="pizza">
+      <p>بيتزا</p>
+      <p class="price">7$</p>
+      <button onclick="addToInvoice('بيتزا', 7)">شراء</button>
+    </div>
+    <div class="food-item">
+      <img src="db.jpg" alt="db">
+      <p>معكرونه</p>
+      <p class="price">3$</p>
+      <button onclick="addToInvoice('معكرونه', 3)">شراء</button>
+    </div>
+    
+  </div>
+<div class="food">
+  <div class="food-item">
+    <img src="2.jpg" alt="burger">
+    <p>شاورما</p>
+    <p class="price">7$</p>
+    <button onclick="addToInvoice('برغر', 7)">شراء</button>
+  </div>
+  <div class="food-item">
+    <img src="d4.jpg" alt="pizza">
+    <p>منسف</p>
+    <p class="price">15$</p>
+    <button onclick="addToInvoice('بيتزا', 15)">شراء</button>
+  </div>
+  <div class="food-item">
+    <img src="dawali1.jpg" alt="db">
+    <p>دوالي</p>
+    <p class="price">10$</p>
+    <button onclick="addToInvoice('معكرونه', 10)">شراء</button>
+  </div>
+</div>
+  <div class="invoice">
+    <h2>الفاتورة</h2>
+    <ul id="invoiceList"></ul>
+    <p id="totalPrice">المجموع: 0$</p>
+  </div>
+
+  <script>
+    let total = 0;
+
+    function addToInvoice(name, price) {
+      var invoiceList = document.getElementById('invoiceList');
+      var newItem = document.createElement('li');
+      newItem.textContent = `${name}: ${price}$`;
+      invoiceList.appendChild(newItem);
+
+      total += price;
+      document.getElementById('totalPrice').textContent = `المجموع: ${total}$`;
+    }
+  </script>
+</body>
+</html>
